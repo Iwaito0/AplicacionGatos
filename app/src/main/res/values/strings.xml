@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application2Frag</string>
+    <string name="rapidapi_key" translatable="false">99728e8d1fmsh34d885dddff5ba7p15b730jsn1893e61c2e22</string>
 </resources>

@@ -4,17 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.ivanvegagonzalez.myapplication2frag.model.Conctato
+import com.ivanvegagonzalez.myapplication2frag.model.Gatos
 
-class DetailViewModel(conctato: Conctato): ViewModel() {
-    private val _conctato = MutableLiveData(conctato)
-    val movie: LiveData<Conctato> get() = _conctato
+class DetailViewModel(gato: Gatos): ViewModel() {
+    private val _gatos = MutableLiveData(gato)
+    val gato: LiveData<Gatos> get() = _gatos
 }
 
 @Suppress("UNCHECKED_CAST")
-class DetailViewModelFactory(private val conctato: Conctato): ViewModelProvider.Factory{
+class DetailViewModelFactory(private val gatos: Gatos): ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return DetailViewModel(conctato) as T
+        return DetailViewModel(gatos) as T
     }
 
 }

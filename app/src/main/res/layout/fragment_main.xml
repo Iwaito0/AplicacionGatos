@@ -10,7 +10,7 @@
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/view_conctato"
+        tools:listitem="@layout/view_gato"
         android:padding="2dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="1"/>

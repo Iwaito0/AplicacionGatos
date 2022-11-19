@@ -8,14 +8,14 @@ import androidx.fragment.app.viewModels
 import com.ivanvegagonzalez.myapplication2frag.R
 import com.ivanvegagonzalez.myapplication2frag.databinding.FragmentDetailBinding
 import com.ivanvegagonzalez.myapplication2frag.loadUrl
-import com.ivanvegagonzalez.myapplication2frag.model.Conctato
+import com.ivanvegagonzalez.myapplication2frag.model.Gatos
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
     private  val viewModel: DetailViewModel by viewModels {
-        DetailViewModelFactory(arguments?.getParcelable<Conctato>(EXTRA_Conctato)!!)
+        DetailViewModelFactory(arguments?.getParcelable<Gatos>(EXTRA_GATO)!!)
     }
     companion object{
-        const val EXTRA_Conctato = "DetailActivity:Conctato"
+        const val EXTRA_GATO = "DetailActivity:Gatos"
     }
 
 
@@ -24,9 +24,9 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         val binding = FragmentDetailBinding.bind(view)
 
 
-        viewModel.movie.observe(viewLifecycleOwner){ conctato ->
-            (requireActivity() as AppCompatActivity).supportActionBar?.title = conctato.title
-            binding.imagen.loadUrl(conctato.urlImagen)
+        viewModel.gato.observe(viewLifecycleOwner){ gatos ->
+            (requireActivity() as AppCompatActivity).supportActionBar?.title = gatos.title
+            binding.imagen.loadUrl(gatos.urlImagen)
         }
     }
 }

@@ -12,9 +12,9 @@ import com.ivanvegagonzalez.myapplication2frag.databinding.FragmentMainBinding
 import com.ivanvegagonzalez.myapplication2frag.ui.detail.DetailFragment
 
 class MainFragment : Fragment(R.layout.fragment_main) {
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels{ MainViewModelFactory(getString(R.string.rapidapi_key))}
     private lateinit var binding: FragmentMainBinding
-    private val adapter = ConctatosAdapter(){ conctato -> viewModel.navigateTo(conctato)}
+    private val adapter = GatosAdapter(){ gato -> viewModel.navigateTo(gato)}
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,15 +25,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         viewModel.state.observe(viewLifecycleOwner){state ->
             binding.progress.visibility =  if (state.loading) View.VISIBLE else View.GONE
-            state.conctato?.let {
-                adapter.conctato = state.conctato
+            state.gato?.let {
+                adapter.gato = state.gato
                 adapter.notifyDataSetChanged()
             }
 
             state.navigateTo?.let {
                 findNavController().navigate(
                     R.id.action_mainFragment_to_detailFragment,
-                    bundleOf(DetailFragment.EXTRA_Conctato to it)
+                    bundleOf(DetailFragment.EXTRA_GATO to it)
                 )
                 viewModel.onNavigateDone()
             }
