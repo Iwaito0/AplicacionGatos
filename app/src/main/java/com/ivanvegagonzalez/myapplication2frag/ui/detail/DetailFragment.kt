@@ -32,11 +32,11 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         viewModel.gato.observe(viewLifecycleOwner){ gatos ->
             (requireActivity() as AppCompatActivity).supportActionBar?.title = gatos.title
             binding.imagen.loadUrl(gatos.urlImagen)
-            bindingDetailN( binding.nombreRaza,gatos)
+            bindingDetailNombreGato( binding.nombreRaza,gatos)
             bindingDetail( binding.descripcionGato,gatos)
         }
     }
-    private fun bindingDetailN(nombreRaza: TextView, gatos: Gatos) {
+    private fun bindingDetailNombreGato(nombreRaza: TextView, gatos: Gatos) {
         nombreRaza.text = buildSpannedString {
             bold { append("Nombre de la raza: ") }
             appendLine(gatos.title)
