@@ -4,5 +4,5 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class Gatos(val title: String,  val urlImagen: String): Parcelable {
+class Gatos(val title: String,  val urlImagen: String, val descripcion: String): Parcelable {
 }

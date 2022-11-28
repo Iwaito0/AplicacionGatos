@@ -13,11 +13,12 @@ class MainViewModel(apiKey: String) : ViewModel() {
     init {
         viewModelScope.launch(Dispatchers.Main) {
             _state.value = _state.value?.copy(loading = true)
-            val result = RemoteConnection.service.popularMovies(apiKey)
-            val gatos = result.results.map {
+            val result = RemoteConnection.service.gatos()
+            val gatos = result.map {
                 Gatos(
                     it.breedName,
-                    it.imgThumb
+                    it.imgThumb,
+                    it.breedDescription
                 )
             }
             _state.value = _state.value?.copy(loading = false, gato = gatos)

@@ -4,6 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.detail.DetailFragment">
+
+    <TextView
+        android:id="@+id/nombreRaza"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:translationY="400dp" />
+
+    <TextView
+        android:id="@+id/descripcionGato"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:translationY="450dp" />
+
     <ImageView
         android:id="@+id/imagen"
         android:layout_width="match_parent"

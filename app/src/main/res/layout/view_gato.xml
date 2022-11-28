@@ -8,36 +8,25 @@
 
     <ImageView
         android:id="@+id/imagen"
-        android:layout_width="113dp"
-        android:layout_height="141dp"
-        android:layout_marginRight="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
+
+
     <TextView
         android:id="@+id/tNombre"
-        android:layout_width="148dp"
-        android:layout_height="37dp"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/tTelefono"
-        android:layout_width="130dp"
-        android:layout_height="38dp"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:layout_marginTop="35dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/tEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:layout_marginTop="75dp"
-        android:text="TextView" />
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:background="@color/white"
+        android:textColor="?attr/colorOnSecondary"
+        android:lines="2"
+        android:gravity="center"
+        android:ellipsize="end"
+        tools:text="Title 1"/>
 
 </GridLayout>

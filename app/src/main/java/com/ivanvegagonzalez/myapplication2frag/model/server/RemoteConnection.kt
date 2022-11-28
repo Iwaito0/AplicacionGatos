@@ -16,7 +16,7 @@ object RemoteConnection {
         .build()
 
     private val builder = Retrofit.Builder()
-        .baseUrl("https://catbreeddb.p.rapidapi.com/")
+        .baseUrl("https://catbreeddb.p.rapidapi.com")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
