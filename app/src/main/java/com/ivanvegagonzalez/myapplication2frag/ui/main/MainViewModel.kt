@@ -18,7 +18,16 @@ class MainViewModel(apiKey: String) : ViewModel() {
                 Gatos(
                     it.breedName,
                     it.imgThumb,
-                    it.breedDescription
+                    it.breedDescription,
+                    it.origin,
+                    it.minWeightPounds,
+                    it.maxWeightPounds,
+                    it.minHeightInches,
+                    it.maxHeightInches,
+                    it.minLifeSpan,
+                    it.maxLifeSpan,
+                    it.furColor,
+                    it.breedType
                 )
             }
             _state.value = _state.value?.copy(loading = false, gato = gatos)

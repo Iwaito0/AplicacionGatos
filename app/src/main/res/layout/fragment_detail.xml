@@ -31,6 +31,14 @@
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="italic" />
+            <TextView
+                android:id="@+id/detallesGato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/descripcionGato"
@@ -40,6 +48,7 @@
                 android:textAlignment="textStart"
                 android:textColor="#000000"
                 android:textSize="24sp" />
+
         </LinearLayout>
     </ScrollView>
 

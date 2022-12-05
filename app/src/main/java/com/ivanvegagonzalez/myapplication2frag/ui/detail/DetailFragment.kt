@@ -34,8 +34,12 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             binding.imagen.loadUrl(gatos.urlImagen)
             bindingDetailNombreGato( binding.nombreRaza,gatos)
             bindingDetail( binding.descripcionGato,gatos)
+            bindingDetailDetalles( binding.detallesGato,gatos)
+
         }
     }
+
+
     private fun bindingDetailNombreGato(nombreRaza: TextView, gatos: Gatos) {
         nombreRaza.text = buildSpannedString {
             bold { append("Nombre de la raza: ") }
@@ -48,6 +52,43 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             bold { append("Descripcion: ") }
             appendLine(gatos.descripcion)
             append()
+        }
+    }
+    private fun bindingDetailDetalles(detallesGato: TextView, gatos: Gatos?) {
+        detallesGato.text = buildSpannedString {
+            bold { append("Origen: ") }
+            appendLine(gatos?.origen)
+            append()
+            appendLine()
+            bold { append("Tipo de raza: ") }
+            appendLine(gatos?.tipoRaza)
+            append()
+            appendLine()
+            bold { append("Color del pelaje: ") }
+            appendLine(gatos?.colorPelaje)
+            append()
+            appendLine()
+            bold { append("Altura minima: ") }
+            appendLine(gatos?.tamanoMin?.toBigDecimal()?.toPlainString()+" inches")
+            append()
+            bold { append("Altura maxima: ") }
+            appendLine(gatos?.tamanoMax?.toBigDecimal()?.toPlainString()+" inches")
+            append()
+            appendLine()
+            bold { append("Peso minimo: ") }
+            appendLine(gatos?.pesoMin?.toBigDecimal()?.toPlainString() + " libras")
+            append()
+            bold { append("Peso maximo: ") }
+            appendLine(gatos?.pesoMax?.toBigDecimal()?.toPlainString()+ " libras")
+            append()
+            appendLine()
+            bold { append("Esperanza de vida minima: ") }
+            appendLine(gatos?.esperamzaVidaMin?.toBigDecimal()?.toPlainString()+" años")
+            append()
+            bold { append("Esperanza de vida maxima: ") }
+            appendLine(gatos?.esperamzaVidaMax?.toBigDecimal()?.toPlainString()+" años")
+            append()
+            appendLine()
         }
     }
 }
